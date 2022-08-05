@@ -2,8 +2,16 @@
 const app = Vue.createApp({
     data (){
         return {
-            raumname:"Raum1",
-            status: "frei"
+            rooms: [
+                {roomName: "großer Saal", numberOfSeats: 50, furnishings: "Flügel" },
+                {roomName: "kleiner Saal", numberOfSeats: 25, furnishings: "Beamer" },
+                {roomName: "Gruppenraum 1", numberOfSeats: 20, furnishings: "Musikanlage" },
+                {roomName: "Gruppenraum 2", numberOfSeats: 10, furnishings: "Sofas" },
+                {roomName: "Gruppenraum 3", numberOfSeats: 15, furnishings: "Musikanlage" },
+                {roomName: "Gruppenraum 4", numberOfSeats: 5, furnishings: "Sofas" }
+
+
+            ]
 
         }
     },
