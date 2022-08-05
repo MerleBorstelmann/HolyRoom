@@ -1,3 +1,4 @@
+
 const app = Vue.createApp({
     data (){
         return {
@@ -12,7 +13,14 @@ const app = Vue.createApp({
 
         },
         bookRoom(){
-            this.status = "belegt"
+            if (this.status === "frei"){
+                this.status = "belegt"
+            }
+            else console.log('Der Raum ist bereits belegt')
+
+        },
+        changeBooking(){
+
         },
         deleteBooking(){
             this.status = "frei"
