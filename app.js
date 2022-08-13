@@ -2,6 +2,7 @@
 const app = Vue.createApp({
     data (){
         return {
+            test: "hallo",
             rooms: [
                 {roomName: "großer Saal", numberOfSeats: 50, furnishings: "Flügel" },
                 {roomName: "kleiner Saal", numberOfSeats: 25, furnishings: "Beamer" },
