@@ -232,17 +232,22 @@
     </details>
     <br>
     <br>
-    <h3> Raumdetails anzeigen</h3>
-    <button @click="showRoom">Raum anzeigen </button>
+    <summary><h3>Raumdetails anzeigen</h3></summary>
+    <p> Versuch aus der Überschrift einen Toggle zu machen und danach alle Räume als toggle darunter einzufügen</p>
+    <summary>Großer Saal</summary>
+    <p>{{rooms1[0].roomName}}</p>
+    <p>{{rooms1[0].numberOfSeats}} - {{rooms1[0].furnishings}}</p>
+    <p>{{rooms1[0].occupancy}}</p>
 
-
+    <h3>Raumdetails anzeigen</h3>
     <p>Raum auswählen:</p>
-    <select v-model="selected">
+    <select v-model="roomChoice">
         <option disabled value="">Raum auswählen</option>
         <option>großer Saal</option>
         <option>kleiner Saal</option>
         <option>Gruppenraum 1</option>
     </select>
+    <button @click="showRoom">Raum anzeigen </button>
 
     <h3> Raum buchen</h3>
     <p><button @click="bookRoom()">Raum buchen</button></p>

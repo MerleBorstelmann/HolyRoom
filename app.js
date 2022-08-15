@@ -3,6 +3,8 @@ const app = Vue.createApp({
     data (){
 
         return {
+            roomChoice:'',
+            showGrosserSaal: false,
             rooms1: [
                 {roomName: "großer Saal", numberOfSeats: 50, furnishings: "Flügel", occupancy: "frei"},
                 {roomName: "kleiner Saal", numberOfSeats: 25, furnishings: "Beamer", occupancy: "frei"},
@@ -27,6 +29,9 @@ const app = Vue.createApp({
     },
     methods: {
         showRoom(){
+        if (roomChoice.localeCompare("großer Saal") === 0){
+            showGrosserSaal = true }
+        }
 
 
         },
