@@ -10,14 +10,20 @@
     <hr />
 </head>
 <body>
+<script src = app.js></script>
 <h1>Startseite</h1>
 <br>
+
 <h3>Platz für Grundriss</h3><br>
 <h2>Raumübersicht</h2>
+
 <div id="app">
     <details>
         <summary>Tabelle Woche 1</summary>
         <br>
+        <li v-for="{ roomName } in rooms">
+            {{ occupancy }}
+        </li>
         <table border="2">
             <tbody>
             <tr>
@@ -32,7 +38,7 @@
             </tr>
             <tr>
                 <td>großer Saal</td>
-                <td>{{belegung}}</td>
+                <td>{{rooms[1].occupancy}}</td>
                 <td>{{room}}</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -221,13 +227,33 @@
             </tr>
             </tbody>
         </table>
+
     </details>
-    <button @click="showRoom">Raum anzeigen </button>
-    <button @click="bookRoom()">Raum buchen</button>
     <br>
+    <br>
+    <h3> Raumdetails anzeigen</h3>
+    <button @click="showRoom">Raum anzeigen </button>
+
+
+    <p>Raum auswählen:</p>
+    <select v-model="selected">
+        <option disabled value="">Raum auswählen</option>
+        <option>großer Saal</option>
+        <option>kleiner Saal</option>
+        <option>Gruppenraum 1</option>
+    </select>
+
+    <h3> Raum buchen</h3>
+    <p><button @click="bookRoom()">Raum buchen</button></p>
+    <input v-model="name" placeholder="Hier Raumnamen eingeben" />
+    <input v-model="day" placeholder="Hier gewünschten Tag angeben" />
+    <br>
+    <h3> Buchung ändern</h3>
     <button @click="changeBooking()">Buchung ändern</button>
+    <br>
+    <h3> Buchung löschen</h3>
     <button @click="deleteBooking">Buchung löschen </button>
 </div>
-<script src = app.js></script>
+
 </body>
 </html>
